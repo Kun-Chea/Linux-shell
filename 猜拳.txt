@@ -1,0 +1,37 @@
+#!/bin/bash
+three_num=$[RANDOM % 3]        或  three_num=$[RANDOM % 3]             
+
+if [ $three_num -eq 0 ];then       list=("石头" "剪刀" "布")
+    pc="石头"
+elif [ $three_num -eq 1 ];then     pc=${list[three_num]}
+    pc="剪刀"
+elif [ $three_num -eq 2 ];then
+    pc="布"
+fi
+
+read -p """请出‘石头’、‘剪刀’、‘布’其中一个：""" man
+
+if [[ $man == "石头" && $pc = "石头" ]];then
+echo "平局"
+elif [[ $man == "石头" && $pc = "剪刀" ]];then
+echo "帅哥胜"
+elif [[ $man == "石头" && $pc = "布" ]];then
+echo "PC胜"
+
+elif [[ $man == "剪刀" && $pc = "剪刀" ]];then
+echo "平局"
+elif [[ $man == "剪刀" && $pc = "布" ]];then
+echo "帅哥胜"
+elif [[ $man == "剪刀" && $pc = "石头" ]];then
+echo "PC胜"
+
+
+elif [[ $man == "布" && $pc = "布" ]];then
+echo "平局"
+elif [[ $man == "布" && $pc = "石头" ]];then
+echo "帅哥胜"
+elif [[ $man == "布" && $pc = "剪刀" ]];then
+echo "PC胜"
+fi    
+
+echo "电脑随机出的是$pc"
