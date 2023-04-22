@@ -1,0 +1,19 @@
+#!/bin/bash
+x=$[RANDOM%101]
+a=o
+while :
+do
+read -p "请输入一个数（0-100）" y
+if   [ $y -eq $x ];then
+     echo "恭喜猜对了"
+     let a++
+  echo "你一共猜了$a次"
+     exit
+elif [ $y -gt $x ];then
+     echo "猜大了"
+     let a++
+else
+     echo "猜小了"
+     let a++
+fi
+done
